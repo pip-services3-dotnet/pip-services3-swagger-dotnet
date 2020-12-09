@@ -1,4 +1,4 @@
-name: Pip.Services RPC toolkit in .NET
+name: Pip.Services Swagger toolkit in .NET
 
 on: 
   push:
