@@ -26,20 +26,24 @@ Develop a RESTful service component. For example, it may look the following way.
 In the `Register` method we load an Open API specification for the service.
 You can also enable swagger by default in the constractor by setting `_swaggerEnable` property.
 ```csharp
-public class MyRestService: RestService {
-    public MyRestService() {
+public class MyRestService: RestService 
+{
+    public MyRestService() 
+    {
         _baseRoute = "myservice";
         _swaggerEnable = true;
     }
 
-    private Task GreetingAsync(HttpRequest req, HttpResponse res, ClaimsPrincipal user, RouteData rd) {
+    private Task GreetingAsync(HttpRequest req, HttpResponse res, ClaimsPrincipal user, RouteData rd) 
+    {
         var parameters = GetParameters(request);
         var name = parameters.GetAsNullableString("name");
         var response = "Hello, " + name + "!";
         await SendResultAsync(res, response);
     }
         
-    public void Register() {
+    public void Register()
+    {
         RegisterRoute(
             "get", "/greeting", 
             new ObjectSchema(true)
