@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using PipServices3.Commons.Config;
 using PipServices3.Commons.Refer;
 using PipServices3.Rpc.Services;
@@ -75,7 +76,11 @@ namespace PipServices3.Swagger.Services
             _routes.Add(route, baseRoute);
         }
 
-        public void Initialize(IApplicationBuilder applicationBuilder)
+        public void ConfigureServices(IServiceCollection services)
+        {
+        }
+
+        public void ConfigureApplication(IApplicationBuilder applicationBuilder)
         {
             applicationBuilder
                 .UseSwaggerUI(c =>
